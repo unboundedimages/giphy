@@ -21,18 +21,20 @@ $(document).ready(function() {
     var queryURL = giphyURL + query + giphyKey + limit
 
     var anime = $(this).attr("data-anime");
+    
     // console.log(pokemonArray);
-
-
+    
+    //cant get the buttons to show the names in the array.
     function createButtons() {
         $("#newButton").empty();
-        for (i = 0; i < pokemonArray.length; i++) {
-            var butt = $("<button>");
 
+        for (i = 0; i < pokemonArray.length; i++) {
+
+            var butt = $("<button>");
             butt.addClass(anime);
-            butt.attr("data-anime", pokemonArray[i]);
+            butt.attr("data-type", pokemonArray[i]);
             butt.text(pokemonArray[i]);
-            $("#newButton").append("<button>");
+            $("#newButton").append(butt);
 
         }
     }
@@ -58,5 +60,5 @@ $(document).ready(function() {
 
     // }
     // };
-    createButtons();
+    createButtons()
 });
