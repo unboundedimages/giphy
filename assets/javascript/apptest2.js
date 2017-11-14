@@ -7,18 +7,21 @@ $(document).ready(function() {
     var pokemonArray = ["pikachu", "squirtle", "charmander"];
 
 
-    var limit = "&limit=10";
+    // var limit = "&limit=10";
 
     var rating = "";
 
 
-    var giphyURL = "https://api.giphy.com/v1/gifs/search?q="
+    // var giphyURL = "https://api.giphy.com/v1/gifs/search?q="
 
-    var giphyKey = "&api_key=dc6zaTOxFJmzC";
+    // var giphyKey = "&api_key=dc6zaTOxFJmzC";
 
-    var query = "";
+    // var query = "pokemon";
+    var type = "pokemon";
 
-    var queryURL = giphyURL + query + giphyKey + limit
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+    // var queryURL = giphyURL + query + giphyKey + limit
 
     var anime = $(this).attr("data-anime");
 
@@ -48,6 +51,7 @@ $(document).ready(function() {
             })
             .done(function(response) {
                 console.log(queryURL);
+                console.log(response);
             })
 
 
