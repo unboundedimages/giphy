@@ -21,9 +21,9 @@ $(document).ready(function() {
     var queryURL = giphyURL + query + giphyKey + limit
 
     var anime = $(this).attr("data-anime");
-    
+
     // console.log(pokemonArray);
-    
+
     //cant get the buttons to show the names in the array.
     function createButtons() {
         $("#newButton").empty();
@@ -39,26 +39,27 @@ $(document).ready(function() {
         }
     }
 
+    createButtons();
+
+    $("#newButton").on("click", function() {
+        $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+            .done(function(response) {
+                console.log(queryURL);
+            })
 
 
-    // $(<button>).on("click", function(){
-    //  $.ajax({
-    //             url: queryURL,
-    //             method: "GET"
-    //         })
-    //         .done(function(response) {
-    //             console.log(queryURL);
-    // }
+        // $(<gif>).on("click", function(){
 
+        // if(){
 
-    // $(<gif>).on("click", function(){
+        // }
+        // else {
 
-    // if(){
+        // }
+        // };
 
-    // }
-    // else {
-
-    // }
-    // };
-    createButtons()
+    });
 });
